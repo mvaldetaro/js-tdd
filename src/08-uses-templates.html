@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>08 Use Template Literals</title>
+</head>
+<body>
+  <h1>Use Template Literals</h1>
+
+  <script>
+    const ireland = {
+      live: 'Dublin',
+      love: 'Galway'
+    };
+
+    const text = 'Eu moro ' + ireland.live + ' e sou apaixonado por ' + ireland.love+ '!';
+
+    const newText = `Eu moro em ${ireland.live} e sou apaixonado por ${ireland.love}!`;
+
+    console.log(text);
+    console.log(newText);
+
+
+    const fruits = 'banana' + '\n' + 'orange' + '\n' + 'apple';
+
+    const newFruits =
+    `banana
+    orange
+    apple`;
+
+    console.log(fruits);
+    console.log(newFruits);
+
+  </script>
+</body>
+</html>
