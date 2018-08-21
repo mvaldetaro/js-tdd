@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Destructuring Objects</title>
+
+</head>
+<body>
+
+  <h1>Destructuring Objects</h1>
+
+  <script>
+    var data = {
+      name: 'Magno',
+      surname: 'Valdetaro',
+      age: '33',
+      blog: 'https://magnovaldetaro.com',
+      social: {
+        twitter: '@mvaldetaro',
+        facebook: '/mvaldetaro'
+      }
+    };
+
+    //const name = data.name;
+    //const surame = data.surname;
+    //const twitter = data.social.twitter;
+
+    //console.log(twitter);
+
+    const {name, surname } = data;
+
+    const {twitter, facebook} = data.social;
+
+    console.log(name);
+    console.log(surname);
+
+    console.log(twitter);
+
+    const { facebook: fb } = data.social;
+
+    console.log(fb);
+
+    const{city = 'Dublin'} = data;
+
+    console.log(city);
+
+  </script>
+</body>
+</html>
