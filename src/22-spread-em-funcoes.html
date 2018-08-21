@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spread Operator em funções</title>
+
+</head>
+<body>
+
+  <h1>Spread Operator</h1>
+
+  <script>
+    function makeSandwich(bread, cheese, sauce) {
+      console.log(`Seu sanduíche com ${bread} pão, ${cheese} queijo e ${sauce} está pronto!`)
+    }
+
+    const ingredientes = ['white', 'cheddar', 'barbecue']
+
+    makeSandwich(...ingredientes);
+  </script>
+</body>
+</html>
