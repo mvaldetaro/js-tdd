@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>16 Array.find e Array.findIndex </title>
+
+</head>
+<body>
+
+  <h1>Métodos Array</h1>
+
+  <script>
+    const data = [
+      {
+        name: 'Magno',
+        age: 33,
+        city: 'Dublin'
+      },
+      {
+        name: 'Camile',
+        age: 32,
+        city: 'Cologne'
+      },
+      {
+        name: 'Magno',
+        age: 34,
+        city: 'Rio de Janeiro'
+      },
+    ]
+
+    const sampleArray = [4, -5, 0, -1];
+
+    const underZero = sampleArray.find(x => x < 0)
+
+    const underZeroIndex = sampleArray.findIndex(x => x < 0)
+
+    console.log(underZero);
+    console.log(underZeroIndex);
+
+    const person = data.find(person => person.name === 'Magno');
+    //const personFilter = data.filter(person => person.name === 'Magno');
+
+    console.log(person);
+    //console.log(personMap);
+
+  </script>
+</body>
+</html>
