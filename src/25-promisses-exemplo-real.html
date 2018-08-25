@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promisses Exemplo Real</title>
+</head>
+<body>
+
+  <h1>Promisses</h1>
+
+  <script>
+    var posts = fetch('https://willianjusten.com.br/search.json');
+
+    //setTimeout(() => {
+    //  console.log(posts);
+    //}, 3000);
+
+    posts
+      .then(data => data.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+
+  </script>
+</body>
+</html>

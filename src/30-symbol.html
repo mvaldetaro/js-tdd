@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classe Extended</title>
+</head>
+<body>
+
+  <h1>Classe</h1>
+
+  <script>
+    let foo = Symbol('name');
+    let bar = Symbol('name');
+
+    //console.log(foo === bar);
+
+    let obj = {
+      [Symbol('name')]: 'Willian',
+      [Symbol('age')]: 26,
+      city: 'Dublin'
+    };
+
+    console.log(Object.keys(obj));
+
+    console.log(Object.getOwnPropertySymbols(obj));
+
+    const symbols = Object.getOwnPropertySymbols(obj);
+
+    const data = symbols.map(sym => obj[sym]);
+
+    console.log(data);
+
+  </script>
+</body>
+</html>

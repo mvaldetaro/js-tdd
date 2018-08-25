@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>For of</title>
+</head>
+<body>
+
+  <h1>For of</h1>
+
+  <script>
+    //Iterators
+    //Iterable
+
+    var txt  = 'Ireland'; //Iterable
+    var it = txt[Symbol.iterator](); //Iterator
+
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+
+    for(letter of txt) {
+      console.log(letter);
+      if(letter === 'a') break;
+    };
+
+  </script>
+</body>
+</html>

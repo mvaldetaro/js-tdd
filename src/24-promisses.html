@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promisses</title>
+
+</head>
+<body>
+
+  <h1>Promisses</h1>
+
+  <script>
+    var defer = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (true) {
+          resolve('Hello');
+        } else {
+          reject('Error');
+        }
+      }, 2000);
+    });
+
+    defer
+      .then((data) => {
+        console.log(data);
+        return 'Novo data';
+      })
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classe</title>
+</head>
+<body>
+
+  <h1>Classe</h1>
+
+  <script>
+    class Animal {
+      constructor(kind, sound){
+        this.kind = kind;
+        this.sound = sound;
+      }
+
+      // shorthand propeties
+      hello() {
+        console.log(`${this.sound} I'm a ${this.kind}`);
+      }
+
+      static info() {
+        console.log('Esta é classe utilizada para criar um animal');
+      }
+
+      get name() {
+        console.log('Meu nome é Jake');
+      }
+
+      set nickname(nick) {
+        this.nick = nick;
+      }
+    }
+
+    const dog = new Animal('Dog', 'Auau');
+    const cat = new Animal('Cat', 'Meow');
+
+  </script>
+</body>
+</html>

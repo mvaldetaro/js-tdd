@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promisses Multiplas</title>
+</head>
+<body>
+
+  <h1>Promisses</h1>
+
+  <script>
+    function Animal(kind, sound) {
+      this.kind = kind;
+      this.sound = sound;
+    }
+
+    Animal.prototype.hello = function() {
+      console.log(`${this.sound} I'm a ${this.kind}!`);
+    }
+
+    const dog = new Animal('dog', 'sound');
+  </script>
+</body>
+</html>
