@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>01 - Async/Await Intro</title>
+  </head>
+  <body></body>
+
+  <script>
+    const getPosts = async (
+      pUrl = "https://willianjusten.com.br/search.json"
+    ) => {
+      const response = await fetch(pUrl);
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+
+      return data.map(post => {
+        console.log(post.url);
+      });
+    };
+
+    getPosts();
+  </script>
+</html>
