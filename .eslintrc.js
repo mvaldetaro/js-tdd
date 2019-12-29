@@ -2,6 +2,7 @@ module.exports = {
   extends: 'airbnb-base',
   plugins: ['import', 'mocha'],
   env: {
+    browser: true,
     commonjs: true,
     node: true,
     mocha: true
