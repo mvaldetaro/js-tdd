@@ -1,4 +1,4 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 describe('Main', () => {
   let arr;
@@ -43,6 +43,6 @@ describe('Main', () => {
   });
 
   it('deve retornar true quando pop igual a 3', () => {
-    expect(arr.pop() === 3).to.be.true;
+    expect(arr.pop()).to.equal(3);
   });
 });
