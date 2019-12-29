@@ -5,5 +5,8 @@ module.exports = {
     commonjs: true,
     node: true,
     mocha: true
+  },
+  rules: {
+    'prefer-const': false
   }
 };
