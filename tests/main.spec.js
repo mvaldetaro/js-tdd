@@ -2,10 +2,22 @@
 Spotify Wrapper API
 */
 
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+import sinonStubPromise from 'sinon-stub-promise';
 import {
-  search, searchAlbuns, searchArtists, searchTracks, searchPlaylists,
+  search,
+  searchAlbuns,
+  searchArtists,
+  searchTracks,
+  searchPlaylists
 } from '../src/main';
+
+global.fetch = require('node-fetch');
+
+chai.use(sinonChai); // chai utiliza as interfaces da sinonChai
+sinonStubPromise(sinon); // sinon stub recebe todos os objetos de sinon
 
 describe('Spotify Wrapper', () => {
   describe('smoke tests', () => {
@@ -28,6 +40,15 @@ describe('Spotify Wrapper', () => {
     // searchPlaylists
     it('deve existir o metodo searchPlaylists', () => {
       expect(searchPlaylists).to.exist;
+    });
+  });
+
+  describe('search (gen)', () => {
+    it('deve executar uma chamada ajax (fetch) ', () => {
+      const fetchedStub = sinon.stub(global, 'fetch');
+      const xArtist = search();
+
+      expect(fetchedStub).to.have.been.calledOnce;
     });
   });
 });
