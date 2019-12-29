@@ -1,3 +1,5 @@
+const expect = require('chai').expect;
+
 describe('Main', () => {
   let arr;
   // roda uma vez, antes do bloco
@@ -18,40 +20,29 @@ describe('Main', () => {
   });
 
   // roda todas as vezes depois de cada bloco
-  afterEach(() => {
+  afterEach(() => {});
 
+  // (smoke test), testar, funções, variaveis existem ou se são do tipo esperado
+  it('deve ser uma array', () => {
+    expect(arr).to.have.a('array');
   });
-
 
   it('deve ter o tamanho 4 quando colocar outro valor no array', () => {
     arr.push(4);
-    console.log(arr.length); // 4
+    expect(arr).to.have.lengthOf(4);
   });
 
   it('deve ter o tamanho 2 quando remover um valor deste array', () => {
     arr.pop();
-    console.log(arr.length); // 2
+    expect(arr).to.have.lengthOf(2);
   });
 
   it('deve remover o valor 3 quando usar pop neste array', () => {
-    console.log(arr.pop() === 3); // true
+    arr.pop();
+    expect(arr).to.not.include(3);
   });
 
-  // describe('Soma', () => {
-  //   context('Caso 1', () => {
-  //     it('Deveria somar 2 + 2 e retornar 4', () => {
-  //       // esperado a acontecer
-  //       throw new Error('Somente um erro');
-  //     });
-  //   });
-  // });
-
-  // describe('Subtração', () => {
-  //   context('Caso 2', () => {
-  //     it('Deveria subtrair 2 - 2 e retornar 0', () => {
-  //       // esperado a acontecer
-  //       throw new Error('Somente um erro');
-  //     });
-  //   });
-  // });
+  it('deve retornar true quando pop igual a 3', () => {
+    expect(arr.pop() === 3).to.be.true;
+  });
 });
