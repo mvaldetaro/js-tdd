@@ -27,22 +27,22 @@ describe('Spotify Wrapper', () => {
     it('deve existir o metodo search', () => {
       expect(search).to.exist;
     });
-    // searchAlbuns
-    it('deve existir o metodo searchAlbuns', () => {
-      expect(searchAlbuns).to.exist;
-    });
-    // searchArtists
-    it('deve existir o metodo searchArtists', () => {
-      expect(searchArtists).to.exist;
-    });
-    // searchTracks
-    it('deve existir o metodo searchTracks', () => {
-      expect(searchTracks).to.exist;
-    });
-    // searchPlaylists
-    it('deve existir o metodo searchPlaylists', () => {
-      expect(searchPlaylists).to.exist;
-    });
+    //   // searchAlbuns
+    //   it('deve existir o metodo searchAlbuns', () => {
+    //     expect(searchAlbuns).to.exist;
+    //   });
+    //   // searchArtists
+    //   it('deve existir o metodo searchArtists', () => {
+    //     expect(searchArtists).to.exist;
+    //   });
+    //   // searchTracks
+    //   it('deve existir o metodo searchTracks', () => {
+    //     expect(searchTracks).to.exist;
+    //   });
+    //   // searchPlaylists
+    //   it('deve existir o metodo searchPlaylists', () => {
+    //     expect(searchPlaylists).to.exist;
+    //   });
   });
 
   describe('search (gen)', () => {
