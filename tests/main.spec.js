@@ -1,30 +1,40 @@
 describe('Main', () => {
+  let arr;
   // roda uma vez, antes do bloco
   before(() => {
-    console.log('before');
+    // pode iniciar uma conexão
+    // criar um conjunto de dados
   });
 
   // roda uma vez, depois do bloco
   after(() => {
-    console.log('after');
+    // pode encerrar uma conexão
+    // apagar um conjunto de dados
   });
 
   // roda todas as vezes antes de cada bloco
   beforeEach(() => {
-    console.log('beforeEach');
+    arr = [1, 2, 3];
   });
 
   // roda todas as vezes depois de cada bloco
   afterEach(() => {
-    console.log('afterEach');
+
   });
 
-  it('test 1', () => {
-    console.log('Teste 1');
+
+  it('deve ter o tamanho 4 quando colocar outro valor no array', () => {
+    arr.push(4);
+    console.log(arr.length); // 4
   });
 
-  it('test 2', () => {
-    console.log('Teste 2');
+  it('deve ter o tamanho 2 quando remover um valor deste array', () => {
+    arr.pop();
+    console.log(arr.length); // 2
+  });
+
+  it('deve remover o valor 3 quando usar pop neste array', () => {
+    console.log(arr.pop() === 3); // true
   });
 
   // describe('Soma', () => {
