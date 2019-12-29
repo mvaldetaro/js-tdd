@@ -7,6 +7,7 @@ module.exports = {
     mocha: true
   },
   rules: {
-    'prefer-const': 0
+    'prefer-const': 0,
+    'no-unused-expressions': 0
   }
 };
