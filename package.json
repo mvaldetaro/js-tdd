@@ -7,7 +7,14 @@
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "watch": "npm run test -- --watch"
+    "watch": "npm run test -- --watch",
+    "coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ]
   },
   "repository": {
     "type": "git",
@@ -32,6 +39,7 @@
     "eslint-plugin-mocha": "^6.2.2",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "nyc": "^15.0.0"
   }
 }
