@@ -1,6 +1,6 @@
 const BASE_URL = 'https://api.spotify.com/v1';
 
-export const search = (pQuery, pType) => {
+export default const search = (pQuery, pType) => {
   fetch(`${BASE_URL}/search?q=${pQuery}&type=${pType}`);
 };
 // export const searchAlbuns = () => {};
