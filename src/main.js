@@ -1,5 +1,7 @@
 const FizzBuzz = pNum => {
-  if (pNum === 0) return 0;
+  if (pNum === 0) {
+    return 0;
+  }
 
   if (pNum % 3 === 0 && pNum % 5 === 0) {
     return 'FizzBuzz';

@@ -7,6 +7,7 @@ module.exports = {
     mocha: true
   },
   rules: {
+    'arrow-parens': 0,
     'prefer-const': 0,
     'no-unused-expressions': 0
   }
