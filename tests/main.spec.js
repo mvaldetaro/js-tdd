@@ -27,22 +27,22 @@ describe('Spotify Wrapper', () => {
     it('deve existir o metodo search', () => {
       expect(search).to.exist;
     });
-    //   // searchAlbuns
-    //   it('deve existir o metodo searchAlbuns', () => {
-    //     expect(searchAlbuns).to.exist;
-    //   });
-    //   // searchArtists
-    //   it('deve existir o metodo searchArtists', () => {
-    //     expect(searchArtists).to.exist;
-    //   });
-    //   // searchTracks
-    //   it('deve existir o metodo searchTracks', () => {
-    //     expect(searchTracks).to.exist;
-    //   });
-    //   // searchPlaylists
-    //   it('deve existir o metodo searchPlaylists', () => {
-    //     expect(searchPlaylists).to.exist;
-    //   });
+    // searchAlbuns
+    it('deve existir o metodo searchAlbuns', () => {
+      expect(searchAlbuns).to.exist;
+    });
+    // searchArtists
+    it('deve existir o metodo searchArtists', () => {
+      expect(searchArtists).to.exist;
+    });
+    // searchTracks
+    it('deve existir o metodo searchTracks', () => {
+      expect(searchTracks).to.exist;
+    });
+    // searchPlaylists
+    it('deve existir o metodo searchPlaylists', () => {
+      expect(searchPlaylists).to.exist;
+    });
   });
 
   describe('search (gen)', () => {
@@ -56,15 +56,26 @@ describe('Spotify Wrapper', () => {
     });
 
     it('deve executar uma chamada ajax (fetch) ', () => {
-      const fetchedStub = sinon.stub(global, 'fetch');
-      search('Incubus', 'artist');
-      expect(fetchedStub).to.have.been.calledWith(
-        `${BASE_URL}/search?q=Incubus&type=artist`
-      );
-      search('Incubus', 'album');
-      expect(fetchedStub).to.have.been.calledWith(
-        `${BASE_URL}/search?q=Incubus&type=album`
-      );
+      context('passando apenas um tipo', () => {
+        const fetchedStub = sinon.stub(global, 'fetch');
+        search('Incubus', 'artist');
+        expect(fetchedStub).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=artist`
+        );
+        search('Incubus', 'album');
+        expect(fetchedStub).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=album`
+        );
+        fetchedStub.restore();
+      });
+      context('passando apenas mais de um tipo', () => {
+        const fetchedStub = sinon.stub(global, 'fetch');
+        search('Incubus', ['artist', 'album']);
+        expect(fetchedStub).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=artist,album`
+        );
+        fetchedStub.restore();
+      });
     });
   });
 });
