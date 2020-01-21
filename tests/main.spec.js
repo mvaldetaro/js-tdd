@@ -5,19 +5,18 @@ Spotify Wrapper API
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import sinonStubPromise from 'sinon-stub-promise';
+
 import {
   search,
   searchAlbuns,
   searchArtists,
   searchTracks,
-  searchPlaylists
+  searchPlaylists,
 } from '../src/main';
 
 global.fetch = require('node-fetch');
 
 chai.use(sinonChai); // chai utiliza as interfaces da sinonChai
-sinonStubPromise(sinon); // sinon stub recebe todos os objetos de sinon
 
 const BASE_URL = 'https://api.spotify.com/v1';
 
@@ -46,36 +45,45 @@ describe('Spotify Wrapper', () => {
   });
 
   describe('search (gen)', () => {
+    let stubedFetch;
+    let promise;
+
+    beforeEach(() => {
+      stubedFetch = sinon.stub(global, 'fetch');
+      promise = stubedFetch.resolves({ json: () => ({ album: 'name' }) });
+    });
+
+    afterEach(() => {
+      stubedFetch.restore();
+    });
+
     it('deve executar uma chamada ajax (fetch) ', () => {
-      const fetchedStub = sinon.stub(global, 'fetch');
       search();
-
-      expect(fetchedStub).to.have.been.calledOnce;
-
-      fetchedStub.restore();
+      expect(stubedFetch).to.have.been.calledOnce;
     });
 
     it('deve executar uma chamada ajax (fetch) ', () => {
       context('passando apenas um tipo', () => {
-        const fetchedStub = sinon.stub(global, 'fetch');
         search('Incubus', 'artist');
-        expect(fetchedStub).to.have.been.calledWith(
-          `${BASE_URL}/search?q=Incubus&type=artist`
+        expect(stubedFetch).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=artist`,
         );
         search('Incubus', 'album');
-        expect(fetchedStub).to.have.been.calledWith(
-          `${BASE_URL}/search?q=Incubus&type=album`
+        expect(stubedFetch).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=album`,
         );
-        fetchedStub.restore();
       });
       context('passando apenas mais de um tipo', () => {
-        const fetchedStub = sinon.stub(global, 'fetch');
         search('Incubus', ['artist', 'album']);
-        expect(fetchedStub).to.have.been.calledWith(
-          `${BASE_URL}/search?q=Incubus&type=artist,album`
+        expect(stubedFetch).to.have.been.calledWith(
+          `${BASE_URL}/search?q=Incubus&type=artist,album`,
         );
-        fetchedStub.restore();
       });
+    });
+
+    it('deve retornar json data da Promise ', () => {
+      const xArtists = search('Incubus', 'artist');
+      return xArtists.then(rData => expect(rData).to.be.eql({ album: 'name' }));
     });
   });
 });
