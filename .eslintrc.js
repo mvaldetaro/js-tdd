@@ -1,6 +1,6 @@
 module.exports = {
-  extends: 'airbnb-base',
-  plugins: ['import', 'mocha'],
+  extends: 'airbnb',
+  plugins: ['import', 'mocha', 'react', 'jsx-a11y'],
   env: {
     browser: true,
     commonjs: true,
