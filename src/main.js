@@ -4,7 +4,13 @@ export const search = (pQuery, pType) => fetch(`${BASE_URL}/search?q=${pQuery}&t
   const xJsonData = rData.json();
   return xJsonData;
 });
-export const searchAlbuns = () => {};
-export const searchArtists = () => {};
-export const searchTracks = () => {};
-export const searchPlaylists = () => {};
+export const searchAlbuns = (pQuery) => {
+  search(pQuery, 'album');
+};
+export const searchArtists = (pQuery) => search(pQuery, 'artist');
+export const searchTracks = (pQuery) => {
+  search(pQuery, 'track');
+};
+export const searchPlaylists = (pQuery) => {
+  search(pQuery, 'playlist');
+};
