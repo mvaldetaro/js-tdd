@@ -5,6 +5,7 @@ export const search = (pQuery, pType) =>
     const xJsonData = rData.json();
     return xJsonData;
   });
+
 export const searchAlbuns = pQuery => search(pQuery, 'album');
 export const searchArtists = pQuery => search(pQuery, 'artist');
 export const searchTracks = pQuery => {

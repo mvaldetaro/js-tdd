@@ -1,5 +1,6 @@
+import { searchAlbuns } from '../src/main';
+
 global.fetch = require('node-fetch');
-import { searchAlbuns } from '../src/main.js';
 
 // Define fetch cmo global para rodar no nodejs
 

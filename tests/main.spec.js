@@ -89,61 +89,77 @@ describe('Spotify Wrapper', () => {
 
   describe('searchArtists', () => {
     it('Deve chamar fetch function', () => {
-      const xArtist = searchArtists('Incubus');
+      searchArtists('Incubus');
       expect(stubedFetch).to.have.been.calledOnce;
     });
 
     it('Deve chamar a url correta', () => {
-      const xIncubus = searchArtists('Incubus');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Incubus&type=artist`);
+      searchArtists('Incubus');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Incubus&type=artist`,
+      );
 
-      const xMuse = searchArtists('Muse');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Muse&type=artist`);
+      searchArtists('Muse');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Muse&type=artist`,
+      );
     });
   });
 
   describe('searchAlbuns', () => {
     it('Deve chamar fetch function', () => {
-      const xAlbuns = searchAlbuns('Incubus');
+      searchAlbuns('Incubus');
       expect(stubedFetch).to.have.been.calledOnce;
     });
 
     it('Deve chamar a url correta', () => {
-      const xIncubus = searchAlbuns('Incubus');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Incubus&type=album`);
+      searchAlbuns('Incubus');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Incubus&type=album`,
+      );
 
-      const xMuse = searchAlbuns('Muse');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Muse&type=album`);
+      searchAlbuns('Muse');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Muse&type=album`,
+      );
     });
   });
 
   describe('searchTracks', () => {
     it('Deve chamar fetch function', () => {
-      const xTracks = searchTracks('Incubus');
+      searchTracks('Incubus');
       expect(stubedFetch).to.have.been.calledOnce;
     });
 
     it('Deve chamar a url correta', () => {
-      const xIncubus = searchTracks('Incubus');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Incubus&type=track`);
+      searchTracks('Incubus');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Incubus&type=track`,
+      );
 
-      const xMuse = searchTracks('Muse');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Muse&type=track`);
+      searchTracks('Muse');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Muse&type=track`,
+      );
     });
   });
 
   describe('searchPlaylists', () => {
     it('Deve chamar fetch function', () => {
-      const xPlaylists = searchPlaylists('Incubus');
+      searchPlaylists('Incubus');
       expect(stubedFetch).to.have.been.calledOnce;
     });
 
     it('Deve chamar a url correta', () => {
-      const xIncubus = searchPlaylists('Incubus');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Incubus&type=playlist`);
+      searchPlaylists('Incubus');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Incubus&type=playlist`,
+      );
 
-      const xMuse = searchPlaylists('Muse');
-      expect(stubedFetch).to.have.been.calledWith(`${BASE_URL}/search?q=Muse&type=playlist`);
+      searchPlaylists('Muse');
+      expect(stubedFetch).to.have.been.calledWith(
+        `${BASE_URL}/search?q=Muse&type=playlist`,
+      );
     });
   });
 });
