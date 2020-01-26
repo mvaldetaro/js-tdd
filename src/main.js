@@ -1,7 +1,7 @@
-const BASE_URL = 'https://api.spotify.com/v1';
+import { API_URL, HEADERS } from './config';
 
 export const search = (pQuery, pType) =>
-  fetch(`${BASE_URL}/search?q=${pQuery}&type=${pType}`).then(rData => {
+  fetch(`${API_URL}/search?q=${pQuery}&type=${pType}`, HEADERS).then(rData => {
     const xJsonData = rData.json();
     return xJsonData;
   });
