@@ -5,11 +5,13 @@ module.exports = {
     browser: true,
     commonjs: true,
     node: true,
-    mocha: true
+    mocha: true,
   },
   rules: {
     'arrow-parens': 0,
     'prefer-const': 0,
-    'no-unused-expressions': 0
-  }
+    'no-unused-expressions': 0,
+    'max-len': ['error', 120],
+    'implicit-arrow-linebreak': 'off',
+  },
 };
