@@ -6,6 +6,8 @@ import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
+import { API_URL } from '../src/config';
+
 import {
   search,
   searchAlbuns,
@@ -18,7 +20,7 @@ global.fetch = require('node-fetch');
 
 chai.use(sinonChai); // chai utiliza as interfaces da sinonChai
 
-const BASE_URL = 'https://api.spotify.com/v1';
+const BASE_URL = API_URL;
 
 describe('Spotify Wrapper', () => {
   let stubedFetch;
