@@ -6,4 +6,4 @@ global.fetch = require('node-fetch');
 
 const albuns = searchAlbuns('Foo Fighters');
 
-albuns.then(rData => console.log(rData));
+albuns.then(rData => rData.albums.items.map(xItem => console.log(xItem.name)));
