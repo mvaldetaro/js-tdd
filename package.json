@@ -2,7 +2,7 @@
   "name": "js-tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/main.js",
+  "main": "./src/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run coverage",

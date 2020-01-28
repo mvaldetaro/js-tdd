@@ -14,7 +14,7 @@ import {
   searchArtists,
   searchTracks,
   searchPlaylists,
-} from '../src/main';
+} from '../src/search';
 
 global.fetch = require('node-fetch');
 
@@ -22,7 +22,7 @@ chai.use(sinonChai); // chai utiliza as interfaces da sinonChai
 
 const BASE_URL = API_URL;
 
-describe('Spotify Wrapper', () => {
+describe('Search', () => {
   let stubedFetch;
   let promise;
 

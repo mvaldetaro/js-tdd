@@ -1,10 +1,9 @@
 import { API_URL, HEADERS } from './config';
+import { toJSON } from './utils';
 
 export const search = (pQuery, pType) =>
-  fetch(`${API_URL}/search?q=${pQuery}&type=${pType}`, HEADERS).then(rData => {
-    const xJsonData = rData.json();
-    return xJsonData;
-  });
+  fetch(`${API_URL}/search?q=${pQuery}&type=${pType}`, HEADERS)
+    .then(rData => toJSON(rData));
 
 export const searchAlbuns = pQuery => search(pQuery, 'album');
 export const searchArtists = pQuery => search(pQuery, 'artist');
