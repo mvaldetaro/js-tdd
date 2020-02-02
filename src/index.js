@@ -6,13 +6,9 @@ import {
   searchTracks,
 } from './search';
 
-import {
-  getAlbum,
-  getAlbums,
-  getAlbumTracks,
-} from './album';
+import { getAlbum, getAlbums, getAlbumTracks } from './album';
 
-module.exports = {
+export {
   search,
   searchAlbuns,
   searchArtists,
